@@ -1,4 +1,4 @@
-package com.zainpradana.bcads4
+package com.zainpradana.bcads4.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.zainpradana.bcads4.model.FilmModel
+import com.zainpradana.bcads4.R
 
 class AllMovieAdapter(private var data: List<FilmModel>,
                       private val listener: (FilmModel) -> Unit)

@@ -1,11 +1,15 @@
-package com.zainpradana.bcads4
+package com.zainpradana.bcads4.module.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.zainpradana.bcads4.module.wishlist.AllMovieActivity
+import com.zainpradana.bcads4.R
+import com.zainpradana.bcads4.adapter.MovieAdapter
+import com.zainpradana.bcads4.model.FilmModel
+import com.zainpradana.bcads4.module.details.DetailActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_all_movie.*
 
 class MainActivity : AppCompatActivity() {
     private var dataList = ArrayList<FilmModel>()

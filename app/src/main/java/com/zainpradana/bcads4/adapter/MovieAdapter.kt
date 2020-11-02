@@ -1,4 +1,4 @@
-package com.zainpradana.bcads4
+package com.zainpradana.bcads4.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,9 +8,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.zainpradana.bcads4.model.FilmModel
+import com.zainpradana.bcads4.R
 
-class MovieAdapter( private var data: List<FilmModel>,
-    private val listener: (FilmModel) -> Unit)
+class MovieAdapter(private var data: List<FilmModel>,
+                   private val listener: (FilmModel) -> Unit)
     : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
 
     lateinit var ContextAdapter : Context

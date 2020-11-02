@@ -1,11 +1,13 @@
-package com.zainpradana.bcads4
+package com.zainpradana.bcads4.module.wishlist
 
 import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.zainpradana.bcads4.R
+import com.zainpradana.bcads4.adapter.AllMovieAdapter
+import com.zainpradana.bcads4.model.FilmModel
+import com.zainpradana.bcads4.module.details.DetailActivity
 import kotlinx.android.synthetic.main.content_all_movie.*
 
 class AllMovieActivity : AppCompatActivity() {

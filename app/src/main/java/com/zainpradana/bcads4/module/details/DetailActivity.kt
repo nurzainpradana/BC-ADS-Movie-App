@@ -1,9 +1,11 @@
-package com.zainpradana.bcads4
+package com.zainpradana.bcads4.module.details
 
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.MediaController
+import com.zainpradana.bcads4.R
+import com.zainpradana.bcads4.model.FilmModel
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
