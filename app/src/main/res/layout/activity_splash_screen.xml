@@ -12,6 +12,7 @@
         android:layout_height="200dp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
+        app:lottie_imageAssetsFolder="Assets"
         app:lottie_fileName="movie_loading.json"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
