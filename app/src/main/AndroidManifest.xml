@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.noActionBar">
+        <activity android:name=".SplashScreenActivity"></activity>
         <activity
             android:name=".module.wishlist.AllMovieActivity"
             android:label="@string/title_activity_all_movie"
-            android:theme="@style/AppTheme.noActionBar"/>
+            android:theme="@style/AppTheme.noActionBar" />
         <activity android:name=".module.details.DetailActivity" />
         <activity android:name=".module.home.MainActivity">
             <intent-filter>
