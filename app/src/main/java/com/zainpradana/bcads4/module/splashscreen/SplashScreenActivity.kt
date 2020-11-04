@@ -1,10 +1,10 @@
-package com.zainpradana.bcads4
+package com.zainpradana.bcads4.module.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import android.os.Looper
+import com.zainpradana.bcads4.R
 import com.zainpradana.bcads4.module.home.MainActivity
 
 class SplashScreenActivity : AppCompatActivity() {
