@@ -21,6 +21,8 @@ import kotlinx.android.synthetic.main.activity_detail.*
 class DetailActivity : AppCompatActivity() {
     lateinit var data: FilmModel
     lateinit var noteHelper: MovieHelper
+    private var statusFavorite = false
+
     private var values = ContentValues()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,15 +48,33 @@ class DetailActivity : AppCompatActivity() {
         videoView.start()
 
         iv_favorite.setOnClickListener {
-            values.put(_ID, data.id)
-            values.put(TITLE, data.judul)
-            values.put(DESC, data.desc)
-            values.put(GENRE, data.genre)
-            values.put(POSTER, data.poster)
-            values.put(TRAILER, data.trailer)
-            values.put(RATING, data.rating)
 
-            noteHelper.insert(values)
+            if (statusFavorite) {
+                noteHelper.deleteById(data.id.toString())
+                iconFavorite(false)
+            } else {
+                values.put(_ID, data.id)
+                values.put(TITLE, data.judul)
+                values.put(DESC, data.desc)
+                values.put(GENRE, data.genre)
+                values.put(POSTER, data.poster)
+                values.put(TRAILER, data.trailer)
+                values.put(RATING, data.rating)
+
+                noteHelper.insert(values)
+
+                iconFavorite(true)
+            }
+        }
+    }
+
+    fun iconFavorite(boolean: Boolean) {
+        if (boolean){
+            statusFavorite = true
+            iv_favorite.setImageResource(R.drawable.ic_favorite)
+        } else {
+            statusFavorite = false
+            iv_favorite.setImageResource(R.drawable.ic_favorite_border_disable)
         }
     }
 

@@ -19,12 +19,12 @@ internal class DatabaseHelper (context: Context) : SQLiteOpenHelper(context, DAT
         private const val DATABASE_VERSION = 1
         private val SQL_CREATE_TABLE_NOTE = "CREATE TABLE $TABLE_NAME" +
                 "( ${_ID} INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "( ${TITLE} TEXT NOT NULL, " +
-                "( ${DESC} TEXT NOT NULL, " +
-                "( ${GENRE} TEXT NOT NULL, " +
-                "( ${POSTER} TEXT NOT NULL, " +
-                "( ${TRAILER} TEXT NOT NULL, " +
-                "( ${RATING} TEXT NOT NULL)"
+                " ${TITLE} TEXT NOT NULL, " +
+                " ${DESC} TEXT NOT NULL, " +
+                " ${GENRE} TEXT NOT NULL, " +
+                " ${POSTER} TEXT NOT NULL, " +
+                " ${TRAILER} TEXT NOT NULL, " +
+                " ${RATING} TEXT NOT NULL)"
     }
 
     override fun onCreate(p0: SQLiteDatabase) {
