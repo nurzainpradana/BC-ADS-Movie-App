@@ -1,6 +1,8 @@
 package com.zainpradana.bcads4.module.details
 
+import android.app.Activity
 import android.content.ContentValues
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -16,12 +18,16 @@ import com.zainpradana.bcads4.database.DatabaseContract.NoteColums.Companion.TRA
 import com.zainpradana.bcads4.database.DatabaseContract.NoteColums.Companion._ID
 import com.zainpradana.bcads4.database.MovieHelper
 import com.zainpradana.bcads4.model.FilmModel
+import com.zainpradana.bcads4.module.login.ui.login.LoginActivity
+import com.zainpradana.bcads4.utils.Const.CODE_LOGIN
+import com.zainpradana.bcads4.utils.UserPreference
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {
     lateinit var data: FilmModel
     lateinit var noteHelper: MovieHelper
     private var statusFavorite = false
+    lateinit var userPreference: UserPreference
 
     private var values = ContentValues()
 
@@ -30,6 +36,8 @@ class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         data = intent.getParcelableExtra<FilmModel>("data")!!
+
+        userPreference = UserPreference(this)
 
         noteHelper = MovieHelper.getInstance(this)
         noteHelper.open()
@@ -49,21 +57,27 @@ class DetailActivity : AppCompatActivity() {
 
         iv_favorite.setOnClickListener {
 
-            if (statusFavorite) {
-                noteHelper.deleteById(data.id.toString())
-                iconFavorite(false)
+            if (userPreference.getStatusUser()) {
+
+                if (statusFavorite) {
+                    noteHelper.deleteById(data.id.toString())
+                    iconFavorite(false)
+                } else {
+                    values.put(_ID, data.id)
+                    values.put(TITLE, data.judul)
+                    values.put(DESC, data.desc)
+                    values.put(GENRE, data.genre)
+                    values.put(POSTER, data.poster)
+                    values.put(TRAILER, data.trailer)
+                    values.put(RATING, data.rating)
+
+                    noteHelper.insert(values)
+
+                    iconFavorite(true)
+                }
             } else {
-                values.put(_ID, data.id)
-                values.put(TITLE, data.judul)
-                values.put(DESC, data.desc)
-                values.put(GENRE, data.genre)
-                values.put(POSTER, data.poster)
-                values.put(TRAILER, data.trailer)
-                values.put(RATING, data.rating)
-
-                noteHelper.insert(values)
-
-                iconFavorite(true)
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivityForResult(intent, CODE_LOGIN)
             }
         }
     }
@@ -93,5 +107,30 @@ class DetailActivity : AppCompatActivity() {
         tv_desc.text = data.desc
 
         statusFavorite()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, bundle: Intent?) {
+        super.onActivityResult(requestCode, resultCode, bundle)
+
+        if (requestCode == CODE_LOGIN) {
+            if (resultCode == Activity.RESULT_OK) {
+                if (statusFavorite) {
+                    noteHelper.deleteById(data.id.toString())
+                    iconFavorite(false)
+                } else {
+                    values.put(_ID, data.id)
+                    values.put(TITLE, data.judul)
+                    values.put(DESC, data.desc)
+                    values.put(GENRE, data.genre)
+                    values.put(POSTER, data.poster)
+                    values.put(TRAILER, data.trailer)
+                    values.put(RATING, data.rating)
+
+                    noteHelper.insert(values)
+
+                    iconFavorite(true)
+                }
+            }
+        }
     }
 }
