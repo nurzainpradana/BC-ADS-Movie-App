@@ -35,60 +35,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadDataSample() {
-        dataList.add(
-            FilmModel(
-                "1",
-                "A Rainy Day in New York",
-                "Kami belum memiliki kilasan singkat dalam bahasa indonesia. Bantu kami memperbaikinya",
-                "Action",
-                R.drawable.ic_ad_astra,
-                R.raw.video_a_rainy_day,
-                4.0F
-            )
-        )
-        dataList.add(
-            FilmModel(
-                "2",
-                "A Rainy Day in New York",
-                "Kami belum memiliki kilasan singkat dalam bahasa indonesia. Bantu kami memperbaikinya",
-                "Action",
-                R.drawable.ic_avengers,
-                R.raw.video_sample,
-                5.0F
-            )
-        )
-        dataList.add(
-            FilmModel(
-                "3",
-                "A Rainy Day in New York",
-                "Kami belum memiliki kilasan singkat dalam bahasa indonesia. Bantu kami memperbaikinya",
-                "Action",
-                R.drawable.ic_poster_sonic,
-                R.raw.video_sonic,
-                1.0F
-            )
-        )
-        dataList.add(
-            FilmModel(
-                "4",
-                "A Rainy Day in New York",
-                "Kami belum memiliki kilasan singkat dalam bahasa indonesia. Bantu kami memperbaikinya",
-                "Action",
-                R.drawable.ic_avengers,
-                R.raw.video_sonic,
-                2.0F
-            )
-        )
-        dataList.add(
-            FilmModel(
-                "5",
-                "A Rainy Day in New York",
-                "Kami belum memiliki kilasan singkat dalam bahasa indonesia. Bantu kami memperbaikinya",
-                "Action",
-                R.drawable.ic_poster_sonic,
-                R.raw.video_sample,
-                3.0F
-            )
-        )
+
     }
 }
