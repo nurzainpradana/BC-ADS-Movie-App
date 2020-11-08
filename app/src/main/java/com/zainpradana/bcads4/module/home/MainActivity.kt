@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         )
         dataList.add(
             FilmModel(
-                "1",
+                "3",
                 "A Rainy Day in New York",
                 "Kami belum memiliki kilasan singkat dalam bahasa indonesia. Bantu kami memperbaikinya",
                 "Action",
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         )
         dataList.add(
             FilmModel(
-                "2",
+                "4",
                 "A Rainy Day in New York",
                 "Kami belum memiliki kilasan singkat dalam bahasa indonesia. Bantu kami memperbaikinya",
                 "Action",
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         )
         dataList.add(
             FilmModel(
-                "1",
+                "5",
                 "A Rainy Day in New York",
                 "Kami belum memiliki kilasan singkat dalam bahasa indonesia. Bantu kami memperbaikinya",
                 "Action",
