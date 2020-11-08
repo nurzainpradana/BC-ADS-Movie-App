@@ -51,7 +51,7 @@ class MovieHelper(context: Context) {
         return database.query(
             DATABASE_TABLE,
             null,
-            "$_ID = ?",
+            "$_ID = $id",
             null,
             null,
             null,

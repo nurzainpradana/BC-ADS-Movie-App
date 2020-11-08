@@ -78,11 +78,20 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun initView() {
-        if (data != null) {
-            tv_title_detail.text = data.judul
-            tv_genre.text = data.genre
-            tv_desc.text = data.desc
+    fun statusFavorite() {
+        var cursor = noteHelper.queryById(data.id.toString())
+        if (cursor.moveToNext()) {
+            iconFavorite(true)
+        } else {
+            iconFavorite(false)
         }
+    }
+
+    private fun initView() {
+        tv_title_detail.text = data.judul
+        tv_genre.text = data.genre
+        tv_desc.text = data.desc
+
+        statusFavorite()
     }
 }
