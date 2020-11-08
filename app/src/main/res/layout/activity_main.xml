@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_movie2"
+        android:id="@+id/tv_favorite_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -66,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_favorite"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -88,21 +88,21 @@
         android:layout_marginBottom="64dp"
         android:text="Movie"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/tv_favorite"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_desc_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="Save your Favorite Movie"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/tv_movie"
-        app:layout_constraintStart_toStartOf="@+id/tv_movie" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_movie_size"
+        app:layout_constraintStart_toStartOf="@+id/tv_movie_size" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tv_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -110,8 +110,8 @@
         android:text="Login"
         android:textColor="@android:color/white"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
-        app:layout_constraintStart_toStartOf="@+id/textView6" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_desc_user"
+        app:layout_constraintStart_toStartOf="@+id/tv_desc_user" />
 
     <TextView
         android:id="@+id/textView4"
@@ -125,7 +125,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/tv_movie"
+        android:id="@+id/tv_movie_size"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -140,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView7"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
+        app:layout_constraintBottom_toTopOf="@+id/tv_user"
+        app:layout_constraintStart_toStartOf="@+id/tv_user"
         app:srcCompat="@drawable/ic_baseline_login" />
 </androidx.constraintlayout.widget.ConstraintLayout>
