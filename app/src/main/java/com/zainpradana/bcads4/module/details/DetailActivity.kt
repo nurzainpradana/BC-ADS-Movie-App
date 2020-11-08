@@ -18,7 +18,7 @@ import com.zainpradana.bcads4.database.DatabaseContract.NoteColums.Companion.TRA
 import com.zainpradana.bcads4.database.DatabaseContract.NoteColums.Companion._ID
 import com.zainpradana.bcads4.database.MovieHelper
 import com.zainpradana.bcads4.model.FilmModel
-import com.zainpradana.bcads4.module.login.ui.login.LoginActivity
+import com.zainpradana.bcads4.module.login.LoginActivity
 import com.zainpradana.bcads4.utils.Const.CODE_LOGIN
 import com.zainpradana.bcads4.utils.UserPreference
 import kotlinx.android.synthetic.main.activity_detail.*
