@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zainpradana.bcads4.module.wishlist.AllMovieActivity
@@ -27,9 +28,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         userPreference = UserPreference(this)
+        rv_shimmer.startShimmerAnimation()
 
-        initListener()
-        getData()
+        var handler = Handler()
+        handler.postDelayed({
+            rv_shimmer.stopShimmerAnimation()
+            rv_shimmer.visibility = View.GONE
+            rv_movie.visibility = View.VISIBLE
+            initListener()
+            getData()
+        }, 5000)
+
+
     }
 
     private fun initListener() {
