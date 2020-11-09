@@ -13,24 +13,15 @@ import kotlinx.android.synthetic.main.content_all_movie.*
 import kotlinx.coroutines.GlobalScope
 
 class AllMovieActivity : AppCompatActivity() {
-
     private var dataList = ArrayList<FilmModel>()
-    lateinit var noteHelper: MovieHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_movie)
         setSupportActionBar(findViewById(R.id.toolbar))
 
-        noteHelper = MovieHelper.getInstance(this)
-        noteHelper.open()
-    }
+        dataList = intent.getParcelableArrayListExtra("data")!!
 
-    fun getData(){
-        GlobalScope
-    }
-
-    fun initView() {
         rv_all_movie.layoutManager = LinearLayoutManager(this)
 
         rv_all_movie.adapter = AllMovieAdapter(dataList){
@@ -38,5 +29,6 @@ class AllMovieActivity : AppCompatActivity() {
                 .putExtra("data", it)
             startActivity(intent)
         }
+
     }
 }

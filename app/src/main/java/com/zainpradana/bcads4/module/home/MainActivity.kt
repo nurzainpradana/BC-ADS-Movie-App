@@ -14,6 +14,7 @@ import com.zainpradana.bcads4.api.DummyData
 import com.zainpradana.bcads4.model.FilmModel
 import com.zainpradana.bcads4.module.details.DetailActivity
 import com.zainpradana.bcads4.module.login.LoginActivity
+import com.zainpradana.bcads4.module.wishlist.WishlistActivity
 import com.zainpradana.bcads4.utils.Const.CODE_LOGIN
 import com.zainpradana.bcads4.utils.UserPreference
 import kotlinx.android.synthetic.main.activity_main.*
@@ -44,8 +45,7 @@ class MainActivity : AppCompatActivity() {
     private fun initListener() {
         tv_user.setOnClickListener {
             if (userPreference.getStatusUser()){
-                //List Data Yang Udah Di Save
-
+                startActivity(Intent(this, WishlistActivity::class.java))
             } else {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivityForResult(intent, CODE_LOGIN)
@@ -104,7 +104,8 @@ class MainActivity : AppCompatActivity() {
 
         if (requestCode == CODE_LOGIN) {
             if (resultCode == Activity.RESULT_OK) {
-
+                startActivity(Intent(this, WishlistActivity::class.java))
+                initView()
             }
         }
     }
