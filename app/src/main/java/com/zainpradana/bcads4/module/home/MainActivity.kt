@@ -7,14 +7,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.zainpradana.bcads4.module.wishlist.AllMovieActivity
+import com.zainpradana.bcads4.module.movielist.AllMovieActivity
 import com.zainpradana.bcads4.R
 import com.zainpradana.bcads4.adapter.MovieAdapter
 import com.zainpradana.bcads4.api.DummyData
 import com.zainpradana.bcads4.model.FilmModel
 import com.zainpradana.bcads4.module.details.DetailActivity
 import com.zainpradana.bcads4.module.login.LoginActivity
-import com.zainpradana.bcads4.utils.Const
 import com.zainpradana.bcads4.utils.Const.CODE_LOGIN
 import com.zainpradana.bcads4.utils.UserPreference
 import kotlinx.android.synthetic.main.activity_main.*

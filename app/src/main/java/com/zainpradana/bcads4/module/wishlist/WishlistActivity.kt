@@ -10,7 +10,7 @@ import com.zainpradana.bcads4.model.FilmModel
 import com.zainpradana.bcads4.module.details.DetailActivity
 import kotlinx.android.synthetic.main.content_all_movie.*
 
-class AllMovieActivity : AppCompatActivity() {
+class WishlistActivity : AppCompatActivity() {
 
     private var dataList = ArrayList<FilmModel>()
 
